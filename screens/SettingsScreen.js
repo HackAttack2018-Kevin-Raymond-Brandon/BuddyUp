@@ -94,8 +94,6 @@ export default class SettingsScreen extends React.Component {
     };
   }
 
-  submitForm() {}
-
   render() {
     return (
       <View>
@@ -137,7 +135,7 @@ export default class SettingsScreen extends React.Component {
         <View style={styles.containerButton}>
           <Button
             title="Match me!"
-            onPress={this.submitForm}
+            onPress={() => this.props.navigation.navigate('Links')}
             color="rgb(256,256,256)"
           />
         </View>

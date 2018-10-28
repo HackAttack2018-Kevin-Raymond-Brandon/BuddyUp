@@ -7,6 +7,7 @@ import {
   Text,
   TouchableOpacity,
   View,
+  Button,
 } from 'react-native';
 import { WebBrowser } from 'expo';
 
@@ -58,9 +59,10 @@ export default class HomeScreen extends React.Component {
               onPress={this._handleHelpPress}
               style={styles.helpLink}
             >
-              <Text style={styles.helpLinkText}>
-                Help, it didn’t automatically reload!
-              </Text>
+              <Button
+                title="Next Page"
+                onPress={() => this.props.navigation.navigate('Settings')}
+              />
             </TouchableOpacity>
           </View>
         </ScrollView>
