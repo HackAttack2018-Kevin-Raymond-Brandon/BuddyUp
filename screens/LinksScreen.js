@@ -13,17 +13,17 @@ export default class LinksScreen extends React.Component {
   render() {
     // const info = this.props.info;
     const info = {
-      name: 'Kevin Ho',
+      name: 'Kelly Ho',
       major: 'Computer Science',
       year: 'Senior',
       hometown: 'New York',
-      bio: 'I love basketball, programming and talking about the news.',
+      bio: 'I love football, programming and talking about the news.',
     };
     return (
       <View style={styles.centerContainer}>
         <Image
           style={styles.picture}
-          source={require('../assets/images/kevin.jpeg')}
+          source={require('../assets/images/kelly.jpeg')}
         />
         <Text style={{ textAlign: 'center', fontSize: 20 }}>
           {info.name + '\n'}
