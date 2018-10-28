@@ -17,7 +17,7 @@ export default class LinksScreen extends React.Component {
       major: 'Computer Science',
       year: 'Senior',
       hometown: 'New York',
-      bio: 'Computer Nerd',
+      bio: 'I love basketball, programming and talking about the news.',
     };
     return (
       <View style={styles.centerContainer}>
@@ -25,12 +25,12 @@ export default class LinksScreen extends React.Component {
           style={styles.picture}
           source={require('../assets/images/kevin.jpeg')}
         />
-        <Text>
-          {`Name: ${info.name}
-           Major: ${info.major}
-            Year: ${info.year}
-        Hometown: ${info.hometown}
-             Bio: ${info.bio}`}
+        <Text style={{ textAlign: 'center', fontSize: 20 }}>
+          {info.name + '\n'}
+          {info.major + '\n'}
+          {info.year + '\n'}
+          {info.hometown + '\n'}
+          {info.bio + '\n'}
         </Text>
         <Button
           onPress={this.handlePress}
@@ -53,6 +53,7 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     width: 150,
     height: 150,
+    marginBottom: 25,
   },
   centerContainer: {
     alignItems: 'center',
