@@ -1,7 +1,6 @@
 # BuddyUp
 ## Inspiration
-     We designed BuddyUp! to tackle the lack of women involved in computer science. Our app matches an experienced computer science student, or Mentor, with a incoming freshman, or Mentee, based off of shared interests, hometown, and field of study. Mentees can ask questions or simply chat with their Mentors, with future iterations allowing for Mentor reviews and app feedback.
-     BuddyUp! can be well implemented into a school's web portal system. We feel that by providing the requisite support and resources necessary, we can help make the industry as a whole more positive, inclusive, and progressive.
+We designed BuddyUp! to tackle the lack of women involved in computer science. Our app matches an experienced computer science student, or Mentor, with a incoming freshman, or Mentee, based off of shared interests, hometown, and field of study. Mentees can ask questions or simply chat with their Mentors, with future iterations allowing for Mentor reviews and app feedback. BuddyUp! can be well implemented into a school's web portal system. We feel that by providing the requisite support and resources necessary, we can help make the industry as a whole more positive, inclusive, and progressive.
 
 ## What It Does
 - BuddyUp! Allows users to sign up as either a Mentor or Mentee. Mentees are paired with a Mentor based off of their intended major, interests ('bio' field*), and hometown. Mentees and Mentors then chat with each other, with Mentors providing support for their Mentee. The match can then be terminated at any time*.
