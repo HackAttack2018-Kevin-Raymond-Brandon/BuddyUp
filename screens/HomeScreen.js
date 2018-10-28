@@ -17,14 +17,7 @@ export default class HomeScreen extends React.Component {
   };
   constructor() {
     super();
-    this.state = { switchValue: true, selectedIndex: 1 };
-    this.switchState = this.switchState.bind(this);
-  }
-
-  switchState() {
-    this.setState(previousState => ({
-      switchValue: !previousState.switchValue,
-    }));
+    this.state = { selectedIndex: 0 };
   }
 
   render() {
@@ -40,25 +33,27 @@ export default class HomeScreen extends React.Component {
             {this._maybeRenderDevelopmentModeWarning()}
           </View>
 
-          <View style={styles.mentorOrMentee}>
-            <SegmentedControlIOS
-              values={['Mentor', 'Mentee']}
-              selectedIndex={this.state.selectedIndex}
-              style={styles.mentorOrMentee}
-              onChange={event => {
-                this.setState({
-                  selectedIndex: event.nativeEvent.selectedSegmentIndex,
-                });
-              }}
-            />
-          </View>
+          <View style={styles.middle}>
+            <View style={styles.mentorOrMentee}>
+              <SegmentedControlIOS
+                values={['Mentor', 'Mentee']}
+                selectedIndex={this.state.selectedIndex}
+                style={styles.mentorOrMentee}
+                onChange={event => {
+                  this.setState({
+                    selectedIndex: event.nativeEvent.selectedSegmentIndex,
+                  });
+                }}
+              />
+            </View>
 
-          <View style={styles.buttonContainer}>
-            <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('Settings')}
-            >
-              <Text style={styles.buttonText}>Pair Up with a buddy!</Text>
-            </TouchableOpacity>
+            <View style={styles.buttonContainer}>
+              <TouchableOpacity
+                onPress={() => this.props.navigation.navigate('Settings')}
+              >
+                <Text style={styles.buttonText}>Pair Up with a buddy!</Text>
+              </TouchableOpacity>
+            </View>
           </View>
         </ScrollView>
       </View>
@@ -160,14 +155,11 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     backgroundColor: '#7FFFD4',
-    alignItems: 'center',
     height: 75,
     width: 250,
     paddingTop: 5,
     paddingBottom: 5,
     marginTop: 200,
-    marginLeft: 65,
-    marginRight: 10,
     borderRadius: 50,
   },
   buttonText: {
@@ -189,6 +181,9 @@ const styles = StyleSheet.create({
     height: 50,
     width: 300,
     marginTop: 75,
-    marginLeft: 20,
+  },
+  middle: {
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
