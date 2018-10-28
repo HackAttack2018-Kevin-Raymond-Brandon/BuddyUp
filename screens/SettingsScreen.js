@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
-import { Text, TextInput, View, StyleSheet, Button } from 'react-native';
+import {
+  Text,
+  TextInput,
+  View,
+  StyleSheet,
+  Button,
+  ScrollView,
+} from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -51,6 +58,7 @@ const styles = StyleSheet.create({
     marginTop: 40,
     marginLeft: 80,
     marginRight: 80,
+    marginBottom: 20,
     padding: 20,
     backgroundColor: 'rgb(66, 191, 244)',
     paddingLeft: 20,
@@ -95,10 +103,12 @@ export default class SettingsScreen extends React.Component {
   }
 
   render() {
+    const { navigation } = this.props;
+    const userType = navigation.getParam('mentorMentee', 'User');
     return (
-      <View>
+      <ScrollView>
         <View>
-          <Text style={styles.header}>New User Form</Text>
+          <Text style={styles.header}>{`New ${userType} Form`}</Text>
         </View>
 
         <View style={styles.container}>
@@ -139,7 +149,7 @@ export default class SettingsScreen extends React.Component {
             color="rgb(256,256,256)"
           />
         </View>
-      </View>
+      </ScrollView>
     );
   }
 }

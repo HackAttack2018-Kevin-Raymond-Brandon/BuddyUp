@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   View,
   SegmentedControlIOS,
+  Image,
 } from 'react-native';
 
 import { WebBrowser } from 'expo';
@@ -21,6 +22,10 @@ export default class HomeScreen extends React.Component {
   }
 
   render() {
+    let mentorMentee;
+    if (this.state.selectedIndex === 0) mentorMentee = 'Mentor';
+    else mentorMentee = 'Mentee';
+
     return (
       <View style={styles.container}>
         <ScrollView
@@ -31,6 +36,10 @@ export default class HomeScreen extends React.Component {
 
           <View style={styles.getStartedContainer}>
             {this._maybeRenderDevelopmentModeWarning()}
+            <Image
+              source={require('../assets/images/BuddyUp.jpeg')}
+              style={{ height: 100, width: 250 }}
+            />
           </View>
 
           <View style={styles.middle}>
@@ -49,7 +58,11 @@ export default class HomeScreen extends React.Component {
 
             <View style={styles.buttonContainer}>
               <TouchableOpacity
-                onPress={() => this.props.navigation.navigate('Settings')}
+                onPress={() =>
+                  this.props.navigation.navigate('Settings', {
+                    mentorMentee: mentorMentee,
+                  })
+                }
               >
                 <Text style={styles.buttonText}>Pair Up with a buddy!</Text>
               </TouchableOpacity>
@@ -80,7 +93,7 @@ export default class HomeScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#rgb(133, 223, 249))',
   },
   developmentModeText: {
     marginBottom: 20,
@@ -154,12 +167,12 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
   buttonContainer: {
-    backgroundColor: '#7FFFD4',
+    backgroundColor: '#rgb(66, 191, 244)',
     height: 75,
     width: 250,
     paddingTop: 5,
     paddingBottom: 5,
-    marginTop: 200,
+    marginTop: 150,
     borderRadius: 50,
   },
   buttonText: {
@@ -178,9 +191,9 @@ const styles = StyleSheet.create({
     color: '#2e78b7',
   },
   mentorOrMentee: {
-    height: 50,
-    width: 300,
-    marginTop: 75,
+    height: 60,
+    width: 275,
+    marginTop: 100,
   },
   middle: {
     alignItems: 'center',
