@@ -104,7 +104,7 @@ export default class SettingsScreen extends React.Component {
 
   render() {
     const { navigation } = this.props;
-    const userType = navigation.getParam('mentorMentee', 'User');
+    const userType = navigation.getParam('userType', 'User');
     return (
       <ScrollView>
         <View>
@@ -145,7 +145,9 @@ export default class SettingsScreen extends React.Component {
         <View style={styles.containerButton}>
           <Button
             title="Match me!"
-            onPress={() => this.props.navigation.navigate('Links')}
+            onPress={() =>
+              this.props.navigation.navigate('Links', { userType: userType })
+            }
             color="rgb(256,256,256)"
           />
         </View>

@@ -3,11 +3,11 @@ import { StyleSheet, Text, Image, View, Button, Alert } from 'react-native';
 
 export default class LinksScreen extends React.Component {
   static navigationOptions = {
-    title: 'Your Mentor/Mentee',
+    title: 'Your Match',
   };
 
   handlePress() {
-    Alert.alert('Chatting with your mentor/mentee');
+    Alert.alert('Chat');
   }
 
   render() {

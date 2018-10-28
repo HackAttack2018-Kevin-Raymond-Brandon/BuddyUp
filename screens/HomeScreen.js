@@ -22,9 +22,9 @@ export default class HomeScreen extends React.Component {
   }
 
   render() {
-    let mentorMentee;
-    if (this.state.selectedIndex === 0) mentorMentee = 'Mentor';
-    else mentorMentee = 'Mentee';
+    let userType;
+    if (this.state.selectedIndex === 0) userType = 'Mentor';
+    else userType = 'Mentee';
 
     return (
       <View style={styles.container}>
@@ -60,7 +60,7 @@ export default class HomeScreen extends React.Component {
               <TouchableOpacity
                 onPress={() =>
                   this.props.navigation.navigate('Settings', {
-                    mentorMentee: mentorMentee,
+                    userType: userType,
                   })
                 }
               >
